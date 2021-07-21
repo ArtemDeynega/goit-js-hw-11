@@ -1,5 +1,10 @@
 const delay = ms => {
-    // Change this function
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(ms);
+            reject('sorry there was an error');
+        }, ms);
+    });
 };
 
 const logger = time => console.log(`Fulfilled after ${time}ms`);
