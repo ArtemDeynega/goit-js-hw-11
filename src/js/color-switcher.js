@@ -1,18 +1,48 @@
+// const colors = [
+//     '#F08916',
+//     '#FA1644',
+//     '#6120E3',
+//     '#16BFFA',
+//     '#06F525',
+//     '#F2E16D',
+//     '#FC9672',
+//     '#C072E6',
+//     '#C0E9FC',
+//     '#ABF7A3',
+// ];
+
 const refs = {
-    body = document.querySelector('body'),
-  startBtn = document.querySelector('[data-action="stop"]'),
-  stopBtn = document.querySelector('[data-action="stop"]'),
+    body: document.querySelector('body'),
+    startBtn: document.querySelector('[data-action="start"]'),
+    stopBtn: document.querySelector('[data-action="stop"]'),
+};
+
+const DELAY = 1000;
+
+let intervalId = null;
+let btnRun = false;
+
+refs.startBtn.addEventListener('click', onStartBtn);
+refs.stopBtn.addEventListener('click', onStopBtn);
+
+function onStartBtn() {
+    if (btnRun) {
+        return;
+    }
+    btnRun = true;
+    refs.startBtn.disabled = true;
+    intervalId = setInterval(changeColor, DELAY);
 }
 
-
-
-
-
-
-
-
-
+function changeColor() {
+    refs.body.style.backgroundColor = getRandomHexColor();
+}
+function onStopBtn() {
+    clearInterval(intervalId);
+    btnRun = false;
+    refs.startBtn.disabled = false;
+}
 
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
