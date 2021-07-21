@@ -1,16 +1,3 @@
-// const colors = [
-//     '#F08916',
-//     '#FA1644',
-//     '#6120E3',
-//     '#16BFFA',
-//     '#06F525',
-//     '#F2E16D',
-//     '#FC9672',
-//     '#C072E6',
-//     '#C0E9FC',
-//     '#ABF7A3',
-// ];
-
 const refs = {
     body: document.querySelector('body'),
     startBtn: document.querySelector('[data-action="start"]'),
