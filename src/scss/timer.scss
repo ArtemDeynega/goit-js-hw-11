@@ -1,0 +1,26 @@
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 900px;
+    margin: 40px auto;
+    margin-top: 30px;
+    font-size: 30px;
+    background-color: cadetblue;
+}
+.field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+    font-size: 30px;
+    color: white;
+    background-color: green;
+}
+.field:not(:first-child) {
+    margin-left: 30px;
+}

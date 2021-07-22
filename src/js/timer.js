@@ -1,1 +1,1 @@
-import '../sass/timer.scss';
+import '../scss/timer.scss';

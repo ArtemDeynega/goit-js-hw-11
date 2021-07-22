@@ -11,8 +11,9 @@ const makeTransaction = transaction => {
 
             if (canProcess) {
                 resolve({ id: transaction.id, time: delay });
+            } else {
+                reject(transaction.id);
             }
-            reject(transaction.id);
         }, delay);
     });
 };
@@ -27,9 +28,9 @@ const logError = id => {
     );
 };
 
-// // Currently the function works like this
-// makeTransaction({ id: 70, amount: 150 }, logSuccess, logError);
-// makeTransaction({ id: 71, amount: 230 }, logSuccess, logError);
+// Currently the function works like this
+makeTransaction({ id: 70, amount: 150 }, logSuccess, logError);
+makeTransaction({ id: 71, amount: 230 }, logSuccess, logError);
 
 // The function should work like this
 makeTransaction({ id: 70, amount: 150 })
